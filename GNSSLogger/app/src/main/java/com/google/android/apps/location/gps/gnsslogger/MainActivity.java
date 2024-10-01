@@ -292,8 +292,11 @@ public class MainActivity extends AppCompatActivity
     resultFragment.setPositionVelocityCalculator(mRealTimePositionVelocityCalculator);
     mFragments[FRAGMENT_INDEX_RESULT] = resultFragment;
 
-    MapFragment mapFragment = new MapFragment();
-    mapFragment.setPositionVelocityCalculator(mRealTimePositionVelocityCalculator);
+//    MapFragment mapFragment = new MapFragment();
+//    mapFragment.setPositionVelocityCalculator(mRealTimePositionVelocityCalculator);
+//    mFragments[FRAGMENT_INDEX_MAP] = mapFragment;
+    TencentMapFragment mapFragment = new TencentMapFragment();
+//    mapFragment.setPositionVelocityCalculator(mRealTimePositionVelocityCalculator);
     mFragments[FRAGMENT_INDEX_MAP] = mapFragment;
 
     AgnssFragment agnssFragment = new AgnssFragment();

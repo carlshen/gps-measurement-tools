@@ -83,7 +83,8 @@ public class FileLogger implements MeasurementListener {
       File baseDirectory;
       String state = Environment.getExternalStorageState();
       if (Environment.MEDIA_MOUNTED.equals(state)) {
-        baseDirectory = new File(Environment.getExternalStorageDirectory(), FILE_PREFIX);
+//        baseDirectory = new File(Environment.getExternalStorageDirectory(), FILE_PREFIX);
+        baseDirectory = new File(mContext.getExternalFilesDir(null), FILE_PREFIX);
         baseDirectory.mkdirs();
       } else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
         logError("Cannot write to external storage.");
@@ -208,10 +209,10 @@ public class FileLogger implements MeasurementListener {
     emailIntent.putExtra(Intent.EXTRA_SUBJECT, "SensorLog");
     emailIntent.putExtra(Intent.EXTRA_TEXT, "");
     // attach the file
-    Uri fileURI =
-        FileProvider.getUriForFile(mContext, BuildConfig.APPLICATION_ID + ".provider", mFile);
-    emailIntent.putExtra(Intent.EXTRA_STREAM, fileURI);
-    getUiComponent().startActivity(Intent.createChooser(emailIntent, "Send log.."));
+//    Uri fileURI =
+//        FileProvider.getUriForFile(mContext, BuildConfig.APPLICATION_ID + ".provider", mFile);
+//    emailIntent.putExtra(Intent.EXTRA_STREAM, fileURI);
+//    getUiComponent().startActivity(Intent.createChooser(emailIntent, "Send log.."));
     if (mFileWriter != null) {
       try {
         mFileWriter.flush();

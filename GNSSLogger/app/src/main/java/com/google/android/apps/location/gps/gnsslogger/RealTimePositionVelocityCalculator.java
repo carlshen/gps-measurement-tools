@@ -61,6 +61,7 @@ public class RealTimePositionVelocityCalculator implements MeasurementListener {
   private int mCurrentColor = Color.rgb(0x4a, 0x5f, 0x70);
   private int mCurrentColorIndex = 0;
   private boolean mAllowShowingRawResults = false;
+  private TencentMapFragment mTencentFragment;
   private MapFragment mMapFragment;
   private MainActivity mMainActivity;
   private PlotFragment mPlotFragment;
@@ -469,6 +470,11 @@ public class RealTimePositionVelocityCalculator implements MeasurementListener {
   /** Sets {@link MapFragment} for receiving WLS location update */
   public void setMapFragment(MapFragment mapFragment) {
     this.mMapFragment = mapFragment;
+  }
+
+  /** Sets {@link MapFragment} for receiving WLS location update */
+  public void setMapFragment(TencentMapFragment mapFragment) {
+    this.mTencentFragment = mapFragment;
   }
 
   /**
