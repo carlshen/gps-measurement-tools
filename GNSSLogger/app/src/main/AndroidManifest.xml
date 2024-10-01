@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.google.android.apps.location.gps.gnsslogger" >
+    package="com.location.gps.gnsslogger" >
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -27,6 +27,7 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
     <uses-permission android:name="com.google.android.providers.gsf.permission.WRITE_GSERVICES"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -45,7 +46,7 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="${MAPS_API_KEY}" />
         <activity
-            android:name="com.google.android.apps.location.gps.gnsslogger.MainActivity"
+            android:name="com.location.gps.gnsslogger.MainActivity"
             android:screenOrientation="portrait"
             android:alwaysRetainTaskState="true"
             android:label="@string/app_name"
@@ -65,11 +66,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_providers_paths"/>
         </provider>
-        <service android:name="com.google.android.apps.location.gps.gnsslogger.TimerService"
+        <service android:name="com.location.gps.gnsslogger.TimerService"
             android:exported="false"
+            android:foregroundServiceType="location"
             android:description="@string/timer_service_name" />
         <receiver
-            android:name="com.google.android.apps.location.gps.gnsslogger.DetectedActivitiesIntentReceiver"
+            android:name="com.location.gps.gnsslogger.DetectedActivitiesIntentReceiver"
             android:exported="false" />
     </application>
 </manifest>

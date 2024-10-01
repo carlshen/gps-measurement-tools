@@ -7,7 +7,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.google.android.apps.location.gps.gnsslogger"
+        applicationId "com.location.gps.gnsslogger"
         minSdk 24
         targetSdk 34
         versionCode 11
