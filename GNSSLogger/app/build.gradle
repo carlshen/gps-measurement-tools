@@ -36,6 +36,8 @@ dependencies {
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
     implementation project(':pseudorange')
     implementation files('libs/achartengine-1.2.0.jar')
+    implementation files('libs/cppmodule-release.aar')
+    implementation files('libs/gpsmodule-release.aar')
     implementation("com.google.guava:guava:31.1-android")
     implementation 'com.google.android.material:material:1.6.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
